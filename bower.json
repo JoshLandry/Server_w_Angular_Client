@@ -1,0 +1,23 @@
+{
+  "name": "feb_18",
+  "version": "0.0.0",
+  "homepage": "",
+  "authors": [
+    "Josh <bluemazaro@yahoo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14"
+  },
+  "devDependencies": {
+    "chai": "~2.1.0",
+    "angular-mocks": "~1.3.14"
+  }
+}

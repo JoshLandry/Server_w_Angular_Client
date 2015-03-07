@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>RESTful Goats & More</title>
+</head>
+<body data-ng-app="goatsApp">
+	<main data-ng-controller="goatsController" data-ng-init="getAll()">
+		<h1>RESTful Goats & more:</h1>
+    <form>
+      <label for="newGoat"></label>
+      Name yr goat: <input type="text" id="newGoatName" data-ng-model="newGoat.goatName"> <br>
+      Yr goat says: <input type="text" id="newGoatSays" data-ng-model="newGoat.goatSays"> <br>
+      Commit "goat" to "goat pen": <input type="submit" data-ng-click="create(newGoat)"></input>
+    </form>
+    <h2>YOU MAY SLAUGHTER YOUR GOATS AT ANY TIME...</h2> <br>
+    <ul data-ng-repeat="goat in goats">
+      <li>
+        Goat Named: {{goat.goatName}}
+      </li>
+      <li>
+        Goat Says: {{goat.goatSays}}
+      </li>
+      <form data-ng-if="goat.editing">
+          <label for="goat{{goat._id}}"></label>
+          Rename him thus: <input type="text" id="goat{{goat._id}}" data-ng-model="goat.goatName"> <br>
+          Resay him thus: <input type="text" id="goat{{goat._id}}" data-ng-model="goat.goatSays"> 
+          <button type="submit" data-ng-click="save(goat)">Transform yr goat</button>
+          <button type="button" data-ng-click="editToggle(goat)">Cancel</button>
+      </form>
+      <button data-ng-click="editToggle(goat)" data-ng-if="!goat.editing">Goat Transform</button>
+      <button data-ng-click="remove(goat)">Slaughter goat</button>
+    </ul>
+	</main>
+
+  <script src="bundle.js"></script>
+</body>
+</html>

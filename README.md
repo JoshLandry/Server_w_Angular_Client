@@ -1,10 +1,10 @@
-# Express_REST_API by Josh Landry
-This is a simple REST API that uses the Express module and MongoDB as a backend.
+# RESTful Goats & more by Josh Landry
+This is a simple REST API that uses the Express module and MongoDB as a backend.  It uses an Angular client as a front end.
 
 It is designed to work with the 'goats' resource, and your posts will be saved to a new database called "goatsapp_development".
 
-First, run mongod using `mongod --dbpath=./db --smallfiles` in the cloned repo of this app.  Then, start the server with node using the command `node server.js`.  Then, send the server requests using Superagent or something similar (`supergent localhost:3000/api/v1/goats` for get, et cetera).
+First, run mongod using `mongod --dbpath=./db --smallfiles` in the cloned repo of this app.  Then, start the server with node using the command `node server.js`.  Then, open your browser and type `localhost:3000` into the URL.
 
-Your posts must follow the format {goatSays: "I can talk im a goat", goatHandler: "who keeps a leashed goat"} to fit into the 'goat' schema.
+You should then see the interface for interacting with your database of goats.  There should be a form for entering new 'goat' entries on the top half of the page, and a list of all goats in the database on the bottom half.  Each goat can be given a name and a message for the "Goat Says" field.
 
-You can also run the command `Grunt` to run both the jshint style checker and mocha/chai-http tests that check the functionality of the route handlers.
+Next to each goat entry listed in the bottom half of the page you will see a 'goat transform' button and a 'slaughter goat' button.  The slaughter button will delete that entry.  The transform button will let you edit the contents of either field of that entry.
